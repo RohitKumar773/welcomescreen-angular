@@ -1,0 +1,269 @@
+.curtain-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.curtain {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: url('../../../../assets/curtain.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 15s ease-in-out;
+}
+
+.showButton {
+  position: relative;
+  height: 45px;
+  padding: 10px 25px;
+  border-radius: 40px;
+  border: 2px solid #fca78d;
+  background: transparent;
+  color: #ffcfc0;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.4s ease;
+  transition: 0.5s ease-in-out;
+}
+
+/* Filling Layer */
+.showButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  border-radius: 40px;
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+
+/* Hover Effect */
+.showButton:hover::before {
+  width: 100%;
+}
+
+.showButton:hover {
+  transform: scale(1.15);
+  color: white;
+}
+
+/* Click Effect */
+.showButton:active {
+  transform: scale(0.95);
+}
+
+
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.left.open {
+  transform: translateX(-100%);
+}
+
+.right.open {
+  transform: translateX(100%) scaleX(-1);
+}
+
+.curtain-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.login-box {
+  min-height: 100vh;
+  overflow: hidden;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #f7f9fc, #e3f2fd);
+  font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+}
+
+.content-box {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px 40px 30px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Header Logos */
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.left-logo {
+  height: 70px;
+}
+
+.right-logo {
+  width: 120px;
+}
+
+.ribbon {
+  margin: 25px auto;
+  padding: 10px 25px;
+  background: linear-gradient(90deg, #ff9800, #ff5722);
+  color: white;
+  font-weight: 600;
+  border-radius: 30px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
+  font-size: 20px;
+}
+
+.content-text h2 {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  margin: 15px 0 5px;
+  color: #0d47a1;
+}
+
+.content-text h3 {
+  font-size: clamp(18px, 4vw, 26px);
+  font-weight: 600;
+  color: #37474f;
+  margin-bottom: 5px;
+}
+
+.date {
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #616161;
+}
+
+.description {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #424242;
+}
+
+.footer-message {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2e7d32;
+  background: #e8f5e9;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.proceed-btn {
+  background: linear-gradient(90deg, #1565c0, #0d47a1);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(13, 71, 161, 0.3);
+}
+
+.proceed-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(13, 71, 161, 0.4);
+  cursor: pointer;
+}
+
+.proceed-btn:active {
+  transform: scale(0.98);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .content-box {
+    padding: 25px;
+  }
+
+  .content-text h2 {
+    font-size: 20px;
+  }
+
+  .content-text h3 {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .left-logo {
+    width: 100%;
+    height: 40px;
+  }
+
+  .right-logo {
+    width: 75px;
+  }
+
+  .proceed-btn {
+    width: 100%;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .proceed-btn:hover{
+    transform: scale(1.5);
+  }
+}
+
+@media (max-width: 480px) {
+  .header-section {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .ribbon {
+    font-size: 13px;
+    padding: 8px 15px;
+  }
+
+  .footer-message {
+    font-size: 13px;
+  }
+}
