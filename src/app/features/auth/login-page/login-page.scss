@@ -14,7 +14,7 @@
   top: 0;
   width: 50%;
   height: 101.5%;
-  background: #7F1112 url('../../../../assets/curtain.png');
+  background: url('../../../../assets/curtain.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -204,9 +204,6 @@
   cursor: pointer;
 }
 
-.proceed-btn:active {
-  transform: scale(0.98);
-}
 
 @keyframes fadeInUp {
   from {

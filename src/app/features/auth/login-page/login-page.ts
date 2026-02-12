@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
       this.hideCurtain = true;
     }, 1500);
 
-    const duration = 1 * 1000;
+    const duration = 200 * 1000;
     const animationEnd = Date.now() + duration;
 
     const interval = setInterval(() => {
