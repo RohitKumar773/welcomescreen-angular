@@ -18,27 +18,33 @@ export class LoginPage {
       this.hideCurtain = true;
     }, 1500);
 
-    const duration = 25 * 1000;
+    const duration = 50 * 1000;
     const animationEnd = Date.now() + duration;
 
     const interval = setInterval(() => {
+
       if (Date.now() > animationEnd) {
         return clearInterval(interval);
       }
 
       confetti({
-        particleCount: 50,
-        startVelocity: 30,
+        particleCount: 80,
+        startVelocity: 35,
         spread: 360,
-        origin: { y: 0 },
-        gravity: 1
+        gravity: 0.9,
+
+        origin: {
+          x: Math.random(),
+          y: Math.random() - 0.2 
+        }
+
       });
 
-    }, 250);
+    }, 400);
   }
 
 
-  proceed(){
+  proceed() {
     alert('welcome');
   }
 
