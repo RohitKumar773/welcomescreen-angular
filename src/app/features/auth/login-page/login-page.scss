@@ -6,6 +6,7 @@
   height: 100vh;
   overflow: hidden;
   z-index: 9999;
+  pointer-events: none;
 }
 
 .curtain {
@@ -13,7 +14,7 @@
   top: 0;
   width: 50%;
   height: 101.5%;
-  background: url('../../../../assets/curtain.png');
+  background: #7F1112 url('../../../../assets/curtain.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -84,6 +85,7 @@
 }
 
 .curtain-content {
+  pointer-events: auto;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -211,6 +213,7 @@
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -248,7 +251,8 @@
     cursor: pointer;
     transition: 0.4s;
   }
-  .proceed-btn:hover{
+
+  .proceed-btn:hover {
     transform: scale(1.5);
   }
 }
@@ -271,57 +275,58 @@
 
 
 @media (min-width: 1800px) {
-  
-.content-box {
-  width: 100%;
-  max-width: 1680px;
-  padding: 60px 80px;
-  border-radius: 16px;
-}
 
-.left-logo {
-  height: 150px;
-}
+  .content-box {
+    width: 100%;
+    max-width: 1680px;
+    padding: 60px 80px;
+    border-radius: 16px;
+  }
 
-.right-logo {
-  width: 200px;
-}
+  .left-logo {
+    height: 150px;
+  }
 
-.ribbon {
-  margin: 45px auto;
-  padding: 20px 40px;
- 
-  border-radius: 100px;
-  font-size: 24px;
-}
+  .right-logo {
+    width: 200px;
+  }
 
-.content-text h2 {
-  font-size: clamp(36px, 6vw, 52px);
-  margin: 15px 0 5px;
-}
+  .ribbon {
+    margin: 45px auto;
+    padding: 20px 40px;
 
-.content-text h3 {
-  font-size: clamp(28px, 4vw, 42px);
-}
+    border-radius: 100px;
+    font-size: 24px;
+  }
 
-.date {
-  margin-bottom: 15px;
-  font-size: 24px;
-}
+  .content-text h2 {
+    font-size: clamp(36px, 6vw, 52px);
+    margin: 15px 0 5px;
+  }
 
-.description {
-  max-width: 1000px;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
+  .content-text h3 {
+    font-size: clamp(28px, 4vw, 42px);
+  }
 
-.footer-message {
-  font-size: 24px;
-}
-.proceed-btn {
+  .date {
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
 
-  padding: 18px 48px;
-  font-size: 28px;
-  border-radius: 80px;
-}
+  .description {
+    max-width: 1000px;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .footer-message {
+    font-size: 24px;
+  }
+
+  .proceed-btn {
+
+    padding: 18px 48px;
+    font-size: 28px;
+    border-radius: 80px;
+  }
 }
