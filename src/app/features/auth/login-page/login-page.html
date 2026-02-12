@@ -1,35 +1,19 @@
 @if (!hideCurtain) {
 <div class="curtain-wrapper">
 
-    <div class="curtain left" [class.open]="openCurtain"></div>
-    <div class="curtain right" [class.open]="openCurtain"></div>
+  <div class="curtain left" [class.open]="openCurtain"></div>
+  <div class="curtain right" [class.open]="openCurtain"></div>
 
-    @if (!openCurtain) {
-    <div class="curtain-content">
-        <button (click)="showCurtain()" class="showButton">Click to Inaugurate</button>
-    </div>
-    }
+  @if (!openCurtain) {
+  <div class="curtain-content">
+    <button (click)="showCurtain()" class="showButton">Click to Inaugurate</button>
+  </div>
+  }
 
 </div>
 }
-<!-- 
-<div class="login-box">
-    <div class="content-box">
-        <img src="assets/logo-sm.png" alt="">
-        <img src="assets/uplogo.png" alt="" width="100px">
-        <p>
-            सिंचाई एवं जल संसाधन विभाग <br>
-            उत्तर प्रदेश, लखनऊ <br>
 
-            दिनांक: 13 फरवरी, 2026 <br>
-
-            माननीय जलशक्ति मंत्री श्री स्वतंत्र देव सिंह जी द्वारा विभागीय कोर्ट केसेज के ऑनलाइन अनुश्रवण हेतु सूचना
-            प्रणाली
-            संगठन, लखनऊ द्वारा विकसित LCMIS पोर्टल का उद्घाटन
-        </p>
-    </div>
-</div> -->
-
+@if (showBackPage) {
 <div class="login-box">
 
   <div class="content-box">
@@ -40,7 +24,7 @@
     </div>
 
     <div class="ribbon">
-       LCMIS Portal Inauguration 
+      LCMIS Portal Inauguration
     </div>
 
     <div class="content-text">
@@ -50,12 +34,13 @@
       <p class="date">दिनांक: 13 फरवरी, 2026</p>
 
       <p class="description">
-        माननीय <strong>जलशक्ति मंत्री श्री स्वतंत्र देव सिंह</strong> जी द्वारा विभागीय कोर्ट केसेज के ऑनलाइन अनुश्रवण हेतु 
+        माननीय <strong>जलशक्ति मंत्री श्री स्वतंत्र देव सिंह</strong> जी द्वारा विभागीय कोर्ट केसेज के ऑनलाइन अनुश्रवण
+        हेतु
         सूचना प्रणाली संगठन, लखनऊ द्वारा विकसित <strong>LCMIS पोर्टल</strong> का शुभ उद्घाटन किया गया।
       </p>
 
       <p class="footer-message">
-         यह पोर्टल विभागीय कार्यों को डिजिटल, पारदर्शी एवं प्रभावी बनाने की दिशा में एक महत्वपूर्ण कदम है।
+        यह पोर्टल विभागीय कार्यों को डिजिटल, पारदर्शी एवं प्रभावी बनाने की दिशा में एक महत्वपूर्ण कदम है।
       </p>
 
       <button class="proceed-btn" (click)="proceed()">
@@ -67,3 +52,4 @@
   </div>
 
 </div>
+}

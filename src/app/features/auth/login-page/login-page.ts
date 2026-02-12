@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import confetti from 'canvas-confetti';
 
 @Component({
@@ -7,18 +7,22 @@ import confetti from 'canvas-confetti';
   templateUrl: './login-page.html',
   styleUrl: './login-page.scss',
 })
-export class LoginPage {
+export class LoginPage implements OnInit {
   openCurtain = false;
   hideCurtain = false;
+  showBackPage = false;
+
+  ngOnInit() {}
 
   showCurtain() {
     this.openCurtain = true;
+    this.showBackPage = true;
 
     setTimeout(() => {
       this.hideCurtain = true;
     }, 1500);
 
-    const duration = 50 * 1000;
+    const duration = 150 * 1000;
     const animationEnd = Date.now() + duration;
 
     const interval = setInterval(() => {
@@ -35,7 +39,7 @@ export class LoginPage {
 
         origin: {
           x: Math.random(),
-          y: Math.random() - 0.2 
+          y: Math.random() - 0.2
         }
 
       });
